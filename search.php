@@ -50,6 +50,35 @@
 if(isset($_GET["submit"]))
 {
   $Movie=$_GET["getName"];
-  echo $Movie;
+  $Servername="localhost";
+    $Dbusername="root";
+    $Dbpassword="";
+    $Dbname="mydb";
+    $connection=new mysqli($Servername,$Dbusername,$Dbpassword,$Dbname);
+    $sql="SELECT  `actor`, `actress`, `director`, `camera`, `producer`, `distributer`, `releasedyear` FROM `movies`where`moviename`='$Movie'";
+    $result=$connection->query($sql);
+    if($result->num_rows>0)
+    {
+      while($row=$result->fetch_assoc())
+      {
+        $actor=$row["actor"];
+        $actress=$row["actress"];
+        $director=$row["director"];
+        $camera=$row["camera"];
+        $producer=$row["producer"];
+        $distributer=$row["distributer"];
+        $releasedyear=$row["releasedyear"];
+        echo "<table class='table'><tr><td>actor</td><td>$actor</td></tr>
+        <tr><td>actress</td><td>$actress</td></tr>
+        <tr><td>director</td><td>$director</td></tr>
+        <tr><td>camera</td><td>$camera</td></tr>
+        <tr><td>producer</td><td>$producer</td></tr>
+        <tr><td>distributer</td><td>$distributer</td></tr>
+        <tr><td>releasedyear</td><td>$releasedyear</td></tr>";
+      }
+    }
+    else{
+      echo "invalid";
+    }
 }
 ?>
