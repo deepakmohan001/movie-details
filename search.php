@@ -16,6 +16,12 @@
             <li class="nav-item">
               <a class="nav-link" href="search.php">Movie search</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="edit.php">Movie edit</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="delete.php">Movie delete</a>
+          </li>
           </ul>
     </nav>
    <h1>

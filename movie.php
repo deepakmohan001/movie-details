@@ -11,11 +11,17 @@
 <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item Active">
-              <a class="nav-link" href="index.php">Movie entry</a>
+              <a class="nav-link" href="movie.php">Movie entry</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="search.php">Movie search</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="edit.php">Movie edit</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="delete.php">Movie delete</a>
+          </li>
           </ul>
     </nav>
     <form method="GET">
