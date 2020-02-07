@@ -25,10 +25,7 @@
           </ul>
     </nav>
     </nav>
-    <form method="GET">
-    <table class="table">
-
-    <h2>
+      <h2>
         Edit
     </h2>
     <form method="GET">
@@ -66,18 +63,19 @@ if(isset($_GET["submit"]))
     $Dbname="mydb";
     $connection=new mysqli($Servername,$Dbusername,$Dbpassword,$Dbname);
     $Sql="SELECT `moviename`, `actor`, `actress`, `director`, `camera`, `producer`, `distributer` FROM `movies` WHERE `releasedyear`=$Released";
+    $result=$connection->query($Sql);
     if($result->num_rows>0)
     {
         while($row=$result->fetch_assoc())
         {
             
-            $Movie=$row["MovieName"];
-            $Actor=$row["ActorName"];
-            $Acttress=$row["ActtressName"];
-            $Director=$row["DirectorName"];
-            $Camera=$row["CameraName"];
-            $Producer=$row["ProducerName"];
-            $Distributer=$row["DistributerName"];
+            $Movie=$row["moviename"];
+            $Actor=$row["actor"];
+            $Acttress=$row["actress"];
+            $Director=$row["director"];
+            $Camera=$row["camera"];
+            $Producer=$row["producer"];
+            $Distributer=$row["distributer"];
             
             echo "<form method='POST'><table class='table'> <tr> <td> movie </td> <td> <input type='text'name='updatemoviename' value='$Movie'/> </td> </tr>
             <tr> <td> actor </td> <td><input type='text'name='updateactor' value='$Actor' </td> </tr>
@@ -96,7 +94,7 @@ if(isset($_GET["submit"]))
     }
     if(isset($_POST["updatebutton"]))
     {
-        $upmovie=$_POST["updatemovie"];
+        $upmovie=$_POST["updatemoviename"];
         $upactor=$_POST["updateactor"];
         $upacttress=$_POST["updateacttress"];
         $updirector=$_POST["updatedirector"];
