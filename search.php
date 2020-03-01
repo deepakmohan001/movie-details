@@ -17,7 +17,7 @@
               <a class="nav-link" href="search.php">Movie search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="edit.php">Movie edit</a>
+              <a class="nav-link" href="update.php">Movie edit</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="delete.php">Movie delete</a>
@@ -25,14 +25,14 @@
           </ul>
     </nav>
    <h1>
-       search
+       SEARCH
    </h1> 
 </body>
 <form method="GET">
 <table class="table">
   <tr>
     <td>
-      Name of the movie:
+      Movie Name:
     </td>
     <td>
       <input type="text"class="form-control"name="getName">
@@ -53,9 +53,9 @@
 </body>
 </html>
 <?php
-if(isset($_GET["submit"]))
+if(isset($_POST["submit"]))
 {
-  $Movie=$_GET["getName"];
+  $Movie=$_POST["getName"];
   $Servername="localhost";
     $Dbusername="root";
     $Dbpassword="";

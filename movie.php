@@ -17,7 +17,7 @@
               <a class="nav-link" href="search.php">Movie search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="edit.php">Movie edit</a>
+              <a class="nav-link" href="update.php">Movie edit</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="delete.php">Movie delete</a>
@@ -108,16 +108,16 @@
 </body>
 </html>
 <?php
-if(isset($_GET["submit"]))
+if(isset($_POST["submit"]))
 {
-    $Movie=$_GET["getMovieName"];
-    $Actor=$_GET["getActorName"];
-    $Acttress=$_GET["getActtressName"];
-    $Director=$_GET["getDirectorName"];
-    $Camera=$_GET["getCameraName"];
-    $Producer=$_GET["getProducerName"];
-    $Distributer=$_GET["getDistributerName"];
-    $Released=$_GET["getReleasedYear"];
+    $Movie=$_POST["getMovieName"];
+    $Actor=$_POST["getActorName"];
+    $Acttress=$_POST["getActtressName"];
+    $Director=$_POST["getDirectorName"];
+    $Camera=$_POST["getCameraName"];
+    $Producer=$_POST["getProducerName"];
+    $Distributer=$_POST["getDistributerName"];
+    $Released=$_POST["getReleasedYear"];
     $Servername="localhost";
     $Dbusername="root";
     $Dbpassword="";
